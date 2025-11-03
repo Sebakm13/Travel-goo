@@ -120,7 +120,7 @@ deep link para acceso directo a itinerario o paquete
 - **Animaciones**: transición entre pantallas, carga de tarjetas de paquetes, feedback de botones
 - **Consumo de API** endpints de autenticación (/auth/signup, /auth/login, /auth/me), paquetes turísticos, reservas y pago.
 ## 5. Endpoints
-**Base URL:** `not found yet`
+**Base URL:** `https://x8ki-letl-twmt.n7.xano.io/api:Rfm_61dW\`
 | Método | Ruta          | Body                                        | Respuesta                                                           |
 | ------ | ------------- | ------------------------------------------- | ------------------------------------------------------------------- |
 | POST   | /auth/signup  | `{ email, password, name? }`                | `201 { authToken, user: { id, email, name, avatarUrl? } }`          |
