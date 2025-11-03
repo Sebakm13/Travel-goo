@@ -121,17 +121,16 @@ deep link para acceso directo a itinerario o paquete
 - **Consumo de API** endpints de autenticación (/auth/signup, /auth/login, /auth/me), paquetes turísticos, reservas y pago.
 ## 5. Endpoints
 **Base URL:** `not found yet`
-| Método | Ruta | Body | Respuesta
-| ------ | ------------ | --------------------------------- | ------------------------------------
-| POST | /auth/signup | { email, password, name? } | 201 { authToken, user: 201 { authToken,                                                                user: { id, email, name,                                                                       avatarUrl? } }
-| POST | /auth/login | { email, password } | 200 { authToken, user: { id, email, name,                                                                         avatarUrl? } }
-| GET | /auth/me | - (requiere header Authorization) | 200 { id, email, name, avatarUrl?,                                                                     reservas: [...] }
-| GET	| /packages|	-	                                |  200 [{ id, nombre, descripcion, 
-                                                        precio, disponibilidad, imagen }]
-| GET	|/packages/:id|	-	                              | 200 { id, nombre, descripcion,                                                                 precio, itinerario, imagen }
-| POST|/reservations|	{ userId, packageId,            |201 { id, estado, fecha, paquete }
-                      fecha, numPersonas }	
-| POST|	/payments	| { reservationId, metodo, monto }	|200 { id, estado, fecha, monto }
+| Método | Ruta          | Body                                        | Respuesta                                                           |
+| ------ | ------------- | ------------------------------------------- | ------------------------------------------------------------------- |
+| POST   | /auth/signup  | `{ email, password, name? }`                | `201 { authToken, user: { id, email, name, avatarUrl? } }`          |
+| POST   | /auth/login   | `{ email, password }`                       | `200 { authToken, user: { id, email, name, avatarUrl? } }`          |
+| GET    | /auth/me      | - (requiere header Authorization)           | `200 { id, email, name, avatarUrl?, reservas: [...] }`              |
+| GET    | /packages     | -                                           | `200 [{ id, nombre, descripcion, precio, disponibilidad, imagen }]` |
+| GET    | /packages/:id | -                                           | `200 { id, nombre, descripcion, precio, itinerario, imagen }`       |
+| POST   | /reservations | `{ userId, packageId, fecha, numPersonas }` | `201 { id, estado, fecha, paquete }`                                |
+| POST   | /payments     | `{ reservationId, metodo, monto }`          | `200 { id, estado, fecha, monto }`                                  |
+
 ## 6. User flows
 - Flujo principal:
 -  Usuario visita Home → Explora paquetes.
